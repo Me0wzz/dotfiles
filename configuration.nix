@@ -110,10 +110,14 @@
     git
     zsh
     busybox
+    gcc
+    clang-tools
     vscode
     hyprland
     hyprpaper
     hyprshot
+    xfce.thunar
+    libreoffice-qt6
     kitty
     ghostty
     waybar

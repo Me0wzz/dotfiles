@@ -1,105 +1,99 @@
-@define-color bg    #1a1b26; 
-@define-color fg    #a9b1d6; 
-@define-color blk   #32344a; 
-@define-color red   #f7768e; 
-@define-color grn   #9ece6a; 
-@define-color ylw   #e0af68; 
-@define-color blu   #7aa2f7; 
-@define-color mag   #ad8ee6; 
-@define-color cyn   #0db9d7; 
-@define-color brblk #444b6a; 
-@define-color white #ffffff; 
+/* @import "$HOME/.config/colors/colors.css" */
+@import "../colors/colors.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
     font-weight: bold;
+    background-color: transparent;
+    border-radius: 5px;
+    min-height: 0;
 }
 
-window#waybar {
-    background-color: @bg;
-    color: @fg;
+window,
+tooltip {
+    background-color: @background;
+}
+
+#waybar {
+    background: alpha(@background, 0.6);
+    border-radius: 0;
+}
+
+#workspaces {
+    margin: 1px 0;
 }
 
 #workspaces button {
-    padding: 0 6px;
-    color: @cyn;
-    background: transparent;
-    border-bottom: 3px solid @bg;
+    color: @foreground;
+    border: 2px solid transparent;
+    padding: 0 8px;
+    margin: 0 2px;
+    transition: none;
 }
+#workspaces button:hover {
+    color: @pink;
+    transition: none;
+    border-bottom: 2px solid @pink;
+    padding: 0 8px;
+}
+
 #workspaces button.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
-}
-#workspaces button.empty {
-    color: @white;
-}
-#workspaces button.empty.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+    color: @pink;
+    border: 2px solid @pink;
+    padding: 0 8px;
+    margin: 0 2px;
 }
 
 #workspaces button.urgent {
     background-color: @red;
-}
-
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#clock,
-#custom-sep,
-#battery,
-#cpu,
-#memory,
-#disk,
-#network,
-#tray {
     padding: 0 8px;
-    color: @white;
 }
 
-#custom-sep {
-    color: @brblk;
-}
-
+#custom-power,
+#tray,
+#bluetooth,
+#network,
+#battery,
+#pulseaudio,
 #clock {
-    color: @cyn;
-    border-bottom: 4px solid @cyn;
+    color: @foreground;
+    margin: 1px 0;
+    padding: 0 10px;
 }
 
-#battery {
-    color: @mag;
-    border-bottom: 4px solid @mag;
+#custom-power:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#pulseaudio:hover,
+#clock:hover {
+    background-color: alpha(@select, 0.6);
 }
 
-#disk {
-    color: @ylw;
-    border-bottom: 4px solid @ylw;
-}
-
-#memory {
-    color: @mag;
-    border-bottom: 4px solid @mag;
-}
-
-#cpu {
-    color: @grn;
-    border-bottom: 4px solid @grn;
+#bluetooth {
+    color: @yellow;
 }
 
 #network {
-    color: @blu;
-    border-bottom: 4px solid @blu;
+    color: @green;
 }
 
-#network.disconnected {
-    background-color: @red;
+#battery {
+    color: @purple;
 }
 
-#tray {
-    background-color: #2980b9;
+#pulseaudio {
+    color: @orange;
 }
 
+#clock {
+    margin-right: 10px;
+    color: @blue;
+}
+
+#custom-power {
+    margin-left: 10px;
+    padding: 0px 10px 0 15px;
+}
 

@@ -1,91 +1,89 @@
-// -*- mode: jsonc -*-
 {
-    "layer": "top", 
-    "position": "top", 
-    "height": 30, 
-    "spacing": 4, 
+    "modules-left": ["custom/power", "hyprland/workspaces"],
+    // "modules-center": [],
+    "modules-right": ["bluetooth", "network", "battery", "pulseaudio", "clock"],
 
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "custom/sep",
-        "hyprland/window",
-        "custom/sep"
-    ],
-    "modules-center": [
-    ],
+    "custom/power": {
+        "format" : "⭘ ",
+        "tooltip": false,
+        "on-click": "wlogout -b 5",
+    },
 
-    "modules-right": [
-        "custom/sep",
-        "network",
-        "custom/sep",
-        "cpu",
-        "custom/sep",
-        "memory",
-        "custom/sep",
-        "disk",
-        "custom/sep",
-        "clock",
-        "custom/sep",
-        "tray"
-    ],
-
-    // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
+	"active-only": false,
         "warp-on-scroll": false,
         "format": "{name}",
-        "persistent-workspaces": {
+        "cursor": true,
+	"persistent-workspaces": {
             "*" : 9
         }
     },
-    "hyprland/window" : {
-        "max-length": 40,
-        "seperate-outputs": false
-    },
+
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        "icon-size": 20,
+        "spacing": 10,
+        "cursor": true,
     },
-    "clock": {
-        "format-alt": "{:%Y-%m-%d}"
+
+    "bluetooth": {
+        "format": " 󰂯 ",
+        "format-disabled": " 󰂲 ",
+        "format-connected": " 󰂱 ",
+        "on-click": "blueman-manager",
     },
-    "cpu": {
-        "format": "CPU: {usage}%",
-        "tooltip": false
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  Ethernet",
+        "format-linked": "  Linked (No IP)",
+        "format-disconnected": "  Disconnected",
+        "tooltip": false,
     },
-    "memory": {
-        "format": "Mem: {used}GiB"
-    },
-    "disk": {
-        "interval": 60,
-        "path": "/",
-        "format": "Disk: {free}"
-    },
+
     "battery": {
         "states": {
-            "good": 95,
+            "good": 85,
             "warning": 30,
             "critical": 15
         },
-        "format": "Bat: {capacity}% {icon} {time}",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "Bat {capacity}%",
-        "format-time": "{H}:{M}",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "tooltip-format": "{time}",
+        "cursor": false,
     },
-    "network": {
-        "format": "Online",
-        "format-disconnected": "Disconnected ⚠"
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": "  {volume}%",
+        "format-icons": {
+            "headphone": " ",
+            "headset": " ",
+            "default": [" "],
+        },
+        "on-click": "pavucontrol",
     },
-    "custom/sep": {
-        "format" : "|",
-        "interval" : 0
+
+    "clock": {
+        "format": "{:%a %d/%m/%Y ~ %H:%M}",
+        "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#F5C2E7'><b>{}</b></span>",
+                "weekdays": "<span color='#89B4FA'><b>{}</b></span>",
+                "days": "<span color='#CDD6F4'><b>{}</b></span>",
+                "today": "<span color='#F9E2AF'><b>{}</b></span>",
+            }
+        },
+        "on-click": "swaync-client -t -sw",
     }
 }
 

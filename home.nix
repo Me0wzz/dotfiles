@@ -7,6 +7,7 @@ let
     hypr = "hypr";
     ghostty = "ghostty";
     waybar = "waybar"; 
+    colors = "colors";
   };
 in
 {
