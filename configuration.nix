@@ -29,7 +29,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  time.hardwareClockInLocalTime = true;
   networking.hostName = "meowbook"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -132,6 +132,9 @@
     spotify
     hw-probe
     power-profiles-daemon
+    aircrack-ng
+    wireshark
+    iw
     networkmanagerapplet 
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
