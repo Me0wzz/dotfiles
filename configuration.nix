@@ -42,7 +42,8 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Seoul";
-
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -116,6 +117,10 @@
     hyprland
     hyprpaper
     hyprshot
+    brightnessctl
+    blueman
+    swaynotificationcenter
+    pavucontrol
     xfce.thunar
     libreoffice-qt6
     kitty

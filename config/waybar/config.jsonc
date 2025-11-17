@@ -1,5 +1,5 @@
 {
-    "modules-left": ["custom/power", "hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     // "modules-center": [],
     "modules-right": ["bluetooth", "network", "battery", "pulseaudio", "clock"],
 
