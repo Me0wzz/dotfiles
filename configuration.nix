@@ -116,6 +116,7 @@
     hyprland
     hyprpaper
     hyprshot
+    hyprlock
     brightnessctl
     blueman
     pavucontrol

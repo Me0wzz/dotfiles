@@ -64,8 +64,8 @@ tooltip {
 }
 
 #custom-power:hover,
+#custom-discord:hover,
 #bluetooth:hover,
-#discord:hover,
 #network:hover,
 #battery:hover,
 #pulseaudio:hover,
@@ -97,5 +97,9 @@ tooltip {
 #custom-power {
     margin-left: 10px;
     padding: 0px 10px 0 15px;
+}
+
+#custom-discord {
+    color: #5865F2; 
 }
 

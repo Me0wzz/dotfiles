@@ -11,6 +11,10 @@ let
   };
 in
 {
+  imports = [
+    ./home/dunst.nix
+  ];
+
   home.username = "meow";
   home.homeDirectory = "/home/meow";
   home.stateVersion = "25.05";
@@ -32,37 +36,6 @@ in
     enable = true;
     systemd.enable = true;
   };
-  
-  services.dunst = {
-    enable = true;
-    
-    settings = {
-      global = {
-        frame_color = "#8caaee";
-        separator_color = "frame"; # dunstrc의 'frame' 값은 문자열로
-        highlight = "#8caaee";
-      };
-      "urgency_low" = {
-        background = "#303446";
-        foreground = "#c6d0f5";
-      };
-      "urgency_normal" = {
-        background = "#303446";
-        foreground = "#c6d0f5";
-      };
-      "urgency_critical" = {
-        background = "#303446";
-        foreground = "#c6d0f5";
-        frame_color = "#ef9f76";
-      };
-      "skip-rule" = {
-        appname = "discord";
-        skip_display = true;
-      };
-
-    };
-  };
-
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
