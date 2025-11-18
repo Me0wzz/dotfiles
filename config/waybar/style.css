@@ -52,8 +52,6 @@ tooltip {
 
 #custom-power,
 #tray,
-#bluetooth,
-#custom-discord,
 #network,
 #battery,
 #pulseaudio,
@@ -61,6 +59,13 @@ tooltip {
     color: @foreground;
     margin: 1px 0;
     padding: 0 10px;
+}
+
+#custom-discord,
+#bluetooth {
+    font-size: 15px;
+    padding: 0 3px;
+
 }
 
 #custom-power:hover,
@@ -95,7 +100,7 @@ tooltip {
 }
 
 #custom-power {
-    margin-left: 10px;
+    margin-left: 0px;
     padding: 0px 10px 0 15px;
 }
 
