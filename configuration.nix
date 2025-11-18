@@ -101,7 +101,6 @@
     xwayland.enable = true;
   };
   #programs.waybar.enable = true;
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -119,8 +118,8 @@
     hyprshot
     brightnessctl
     blueman
-    swaynotificationcenter
     pavucontrol
+    dunst
     xfce.thunar
     libreoffice-qt6
     kitty

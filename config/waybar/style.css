@@ -53,6 +53,7 @@ tooltip {
 #custom-power,
 #tray,
 #bluetooth,
+#custom-discord,
 #network,
 #battery,
 #pulseaudio,
@@ -64,6 +65,7 @@ tooltip {
 
 #custom-power:hover,
 #bluetooth:hover,
+#discord:hover,
 #network:hover,
 #battery:hover,
 #pulseaudio:hover,

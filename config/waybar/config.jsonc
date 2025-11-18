@@ -1,7 +1,7 @@
 {
     "modules-left": ["hyprland/workspaces"],
     // "modules-center": [],
-    "modules-right": ["bluetooth", "network", "battery", "pulseaudio", "clock"],
+    "modules-right": ["custom/discord", "bluetooth", "network", "battery", "pulseaudio", "clock"],
 
     "custom/power": {
         "format" : "⭘ ",
@@ -17,7 +17,7 @@
         "format": "{name}",
         "cursor": true,
 	"persistent-workspaces": {
-            "*" : 9
+            "*" : 5
         }
     },
 
@@ -33,7 +33,11 @@
         "format-connected": " 󰂱 ",
         "on-click": "blueman-manager",
     },
-
+    "custom/discord": {   
+        "format": " ",
+        "on-click": "discord",
+        "tooltip": false,
+    },
     "network": {
         "format-wifi": "  {essid}",
         "format-ethernet": "  Ethernet",
