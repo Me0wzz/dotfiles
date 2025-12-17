@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -22,6 +22,10 @@ in
     pkgs.home-manager
   ];
   programs.home-manager.enable = true;
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+  };
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -35,8 +39,8 @@ in
   programs.waybar = {
     enable = true;
     systemd.enable = true;
+    catppuccin.enable = false;
   };
-
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";

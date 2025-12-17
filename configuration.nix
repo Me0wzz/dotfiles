@@ -117,11 +117,17 @@
     hyprpaper
     hyprshot
     hyprlock
+    metasploit
+    nmap
     brightnessctl
     blueman
     pavucontrol
     dunst
     xfce.thunar
+    kdePackages.dolphin
+    kdePackages.kde-cli-tools
+    p7zip
+    unar
     libreoffice-qt6
     kitty
     ghostty
